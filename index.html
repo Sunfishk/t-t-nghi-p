@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Thư mời tham dự lễ tốt nghiệp</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hiệu ứng hạt sáng trang trí nền -->
+    <div class="bg-particles">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+    </div>
+
+    <div class="card-container">
+        <!-- Viền hoa văn góc -->
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+
+        <!-- Header & Tên -->
+        <header class="header">
+            <p class="sub-title">THƯ MỜI THAM DỰ</p>
+            <h1>LỄ TỐT NGHIỆP CỦA<br><span class="highlight-name">LÊ XUÂN DUẨN</span></h1>
+            <p class="welcome">HÂN HẠNH MỜI</p>
+            <h2 class="guest-name">BẠN BÈ, NGƯỜI THÂN VÀ QUÝ THẦY CÔ</h2>
+            
+            <div class="avatar-box">
+                <div class="grad-cap">🎓</div>
+            </div>
+
+            <div class="event-info">
+                <p>📅 <strong>24/01/2026</strong> | ⏰ Lúc 10h - 14h</p>
+                <p>🏫 <strong>Học viện Kỹ thuật Quân sự</strong></p>
+                <p>📍 Số 236 Hoàng Quốc Việt, P. Nghĩa Đô, Hà Nội</p>
+            </div>
+        </header>
+
+        <!-- Lịch tháng -->
+        <section class="calendar-section animate-on-scroll">
+            <div class="calendar-header">
+                <span>THÁNG 12</span>
+                <span>2026</span>
+            </div>
+            <div class="calendar-grid">
+                <div>T2</div><div>T3</div><div>T4</div><div>T5</div><div>T6</div><div>T7</div><div>CN</div>
+                <div>-</div><div>-</div><div>-</div><div>1</div><div>2</div><div>3</div><div>4</div>
+                <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div>
+                <div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div>
+                <div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div class="active-day">24 <span class="heart-pulse">💖</span></div><div>25</div>
+                <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div><div>-</div>
+            </div>
+        </section>
+
+        <!-- Đếm ngược -->
+        <section class="countdown-section animate-on-scroll">
+            <h3>⏳ CÙNG ĐẾM NGƯỢC THỜI GIAN</h3>
+            <div class="timer">
+                <div class="time-box"><span id="days">00</span><p>Ngày</p></div>
+                <div class="time-box"><span id="hours">00</span><p>Giờ</p></div>
+                <div class="time-box"><span id="minutes">00</span><p>Phút</p></div>
+                <div class="time-box"><span id="seconds">00</span><p>Giây</p></div>
+            </div>
+        </section>
+
+        <!-- Bản đồ Google Maps & Nút bấm chuyển hướng tích hợp sẵn đường dẫn địa chỉ -->
+        <section class="map-section animate-on-scroll">
+            <h3>🗺️ XEM DẪN ĐƯỜNG 🗺️</h3>
+            
+            <div class="map-frame">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.657185685292!2d105.7827299!3d21.0463985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abb158a27917%3A0x2f7c00e168051792!2zSOG7jWMgdmnhu4duIEvhu7kgdGh14bqtdCBRdcODom4gc-G7sSAtIDIzNiBIb8OgbmcgUXXhu5FjIFZp4buHdA!5e0!3m2!1svi!2svn!4v1700000000000!5m2!1svi!2svn" 
+                    width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Nút bấm chứa địa chỉ tìm kiếm chính xác khi nhấn vào -->
+             <div class="map-button-wrapper"></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Học+viện+Kỹ+thuật+Quân+sự+236+Hoàng+Quốc+Việt+Hà+Nội" target="_blank" class="btn-google-map">
+                <span class="heart-icon">❤️</span> Xem Google map <span class="heart-icon">❤️</span>
+            </a>
+        </section>
+
+        <!-- Form RSVP -->
+        <section class="rsvp-section animate-on-scroll">
+            <h3>✨ Xác nhận tham dự ✨</h3>
+            <form id="rsvpForm">
+                <input type="text" id="guestNameInput" placeholder="Nhập tên của bạn..." required>
+                <select id="attendanceSelect">
+                    <option value="Có">🎉 Sẽ tham dự cùng bạn</option>
+                    <option value="Không">😢 Rất tiếc, không thể đến</option>
+                </select>
+                <textarea id="wishMessage" placeholder="💌 Gửi lời chúc tốt đẹp đến mình nhé..." rows="3" required></textarea>
+                <button type="submit" class="btn-submit">💖 GỬI LỜI CHÚC & XÁC NHẬN 💖</button>
+            </form>
+        </section>
+
+        <!-- Bảng hiển thị lời chúc ẩn/hiện khi bấm -->
+<section class="wishes-section animate-on-scroll">
+    <h3>📖 Sổ tay lời chúc 📖</h3>
+    <p class="wish-tip">👇 Nhấn vào từng lời chúc để xem nội dung</p>
+    <div id="wishesContainer" class="wishes-box">
+        <!-- Mẫu lời chúc mặc định -->
+        <div class="wish-item" onclick="toggleWish(this)">
+            <div class="wish-header">
+                <strong>Thầy Cô</strong> <span class="badge-status">(Sẽ tham dự)</span>
+                <span class="toggle-icon">👁️ Xem lời chúc</span>
+            </div>
+            <div class="wish-content">
+                <p>Chúc mừng em hoàn thành xuất sắc chặng đường học tập tại Học viện Kỹ thuật Quân sự!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <footer class="footer">
+            <h2>Thank you!</h2>
+            <p>"Những cố gắng của mình hôm nay cũng là nhờ sự đồng hành của mọi người. Mong được gặp thầy cô, bạn bè, anh chị trong ngày trọng đại này!"</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

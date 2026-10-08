@@ -1,0 +1,412 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-tap-highlight-color: transparent; /* Loại bỏ vệt đen khi chạm trên điện thoại */
+}
+
+/* Nền chuyển động sóng dải màu mượt mà */
+body {
+    background: linear-gradient(-45deg, #f5f2eb, #ece5d8, #e0d5c1, #f9f6f0);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Các hạt trang trí bay lơ lửng trên nền */
+.bg-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.25);
+    filter: blur(5px);
+    animation: floatParticles 8s infinite linear;
+}
+
+.p1 { width: 50px; height: 50px; top: 10%; left: 10%; animation-duration: 9s; }
+.p2 { width: 80px; height: 80px; top: 60%; right: 5%; animation-duration: 13s; }
+.p3 { width: 40px; height: 40px; bottom: 15%; left: 15%; animation-duration: 7s; }
+.p4 { width: 65px; height: 65px; top: 35%; right: 25%; animation-duration: 11s; }
+
+@keyframes floatParticles {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-40px) rotate(180deg); opacity: 0.7; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 0.3; }
+}
+
+/* Khung thiệp tối ưu giao diện dọc cho Mobile */
+.card-container {
+    width: 92%;
+    max-width: 400px;
+    background: rgba(255, 253, 249, 0.95);
+    backdrop-filter: blur(8px); /* Hiệu ứng kính mờ sang trọng */
+    border: 1.5px solid #d4af37;
+    padding: 22px 14px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1;
+    margin: auto;
+}
+
+/* Trang trí góc thiệp */
+.corner-decoration {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #d4af37;
+}
+.top-left { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.top-right { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+
+.sub-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #88632a;
+    font-weight: 600;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: #333;
+    margin: 8px 0;
+}
+
+.highlight-name {
+    font-size: 22px;
+    color: #88632a;
+    font-weight: bold;
+}
+
+.welcome {
+    font-size: 11px;
+    color: #777;
+    margin-top: 8px;
+}
+
+.guest-name {
+    font-size: 17px;
+    color: #222;
+    margin: 4px 0 12px 0;
+}
+
+.avatar-box {
+    margin: 10px auto 16px;
+    width: 60px;
+    height: 60px;
+    background: #fcf8ec;
+    border: 2px dashed #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.grad-cap { font-size: 26px; }
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.event-info {
+    font-size: 12px;
+    color: #444;
+    background: #fdfbf7;
+    padding: 10px 8px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+/* Calendar tối ưu nút bấm cho ngón tay trên màn hình điện thoại */
+.calendar-section {
+    background: #fff;
+    border: 1px solid #e8dfc8;
+    padding: 10px 8px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background: #88632a;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    font-size: 11px;
+}
+
+.calendar-grid div {
+    padding: 6px 0;
+}
+
+.active-day {
+    background-color: #d4af37 !important;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.heart-pulse {
+    font-size: 9px;
+    display: inline-block;
+    animation: pulseHeart 1.2s infinite;
+}
+
+@keyframes pulseHeart {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+/* Khung trang trí nhẹ bao quanh nút Xem Google Map */
+.map-button-wrapper {
+    margin-top: 14px;
+    padding: 8px;
+    background: rgba(253, 251, 247, 0.8);
+    border: 1px dashed #d4af37; /* Viền nét đứt màu vàng kim nhẹ */
+    border-radius: 30px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Nút bấm Xem Google Map bên trong */
+.btn-google-map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #d4af37;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    animation: pulseGMap 2s infinite ease-in-out;
+}
+
+/* Hiệu ứng co giãn nhịp nhàng */
+@keyframes pulseGMap {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-google-map:hover {
+    background: #fffdf9;
+    color: #88632a;
+}
+
+.heart-icon {
+    font-size: 11px;
+}
+/* Đồng hồ đếm ngược vừa vặn màn hình dọc */
+.countdown-section, .map-section, .rsvp-section, .wishes-section {
+    margin-bottom: 16px;
+}
+
+.countdown-section h3, .map-section h3, .rsvp-section h3, .wishes-section h3 {
+    font-size: 12px;
+    color: #88632a;
+    margin-bottom: 8px;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.time-box {
+    background: #2b2b2b;
+    color: #fff;
+    padding: 8px 4px;
+    border-radius: 6px;
+    flex: 1;
+}
+
+.time-box span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f3e5ab;
+}
+
+.time-box p {
+    font-size: 9px;
+    color: #ccc;
+}
+
+/* Tối ưu các ô nhập liệu Form trên điện thoại */
+.rsvp-section input, .rsvp-section select, .rsvp-section textarea {
+    width: 100%;
+    padding: 12px 10px; /* Tăng khoảng trống bấm chạm cho ngón tay */
+    margin-top: 6px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    font-size: 13px;
+    background: #fff;
+}
+
+.btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #d4af37, #aa8228);
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Sổ lời chúc */
+.wishes-box {
+    border: 1px solid #e0d8c3;
+    background: #fff;
+    padding: 8px;
+    font-size: 12px;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.wish-item {
+    background: #fcfbf8;
+    padding: 8px;
+    margin-bottom: 6px;
+    border-left: 3px solid #d4af37;
+    border-radius: 4px;
+}
+
+.footer {
+    margin-top: 16px;
+    font-size: 11px;
+    color: #555;
+    border-top: 1px dashed #d4af37;
+    padding-top: 12px;
+}
+
+.footer h2 {
+    font-family: 'Playfair Display', serif;
+    color: #88632a;
+}
+/* Dòng hướng dẫn nhỏ */
+.wish-tip {
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+/* Thẻ lời chúc có thể bấm vào */
+.wish-item {
+    background: #ffffff;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 3px solid #d4af37;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.wish-item:hover {
+    background: #fdfbf7;
+}
+
+/* Tiêu đề thanh lời chúc */
+.wish-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.badge-status {
+    font-size: 10px;
+    color: #2e7d32;
+    background: #e8f5e9;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.toggle-icon {
+    font-size: 10px;
+    color: #88632a;
+    font-weight: 600;
+}
+
+/* Nội dung lời chúc mặc định ĐƯỢC ẨN */
+.wish-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.wish-content p {
+    font-size: 12px;
+    color: #444;
+    padding-top: 8px;
+    border-top: 1px dashed #eee;
+    line-height: 1.4;
+}
+
+/* Trạng thái KHI ĐƯỢC MỞ (Active) */
+.wish-item.active .wish-content {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 6px;
+}
+
+.wish-item.active .toggle-icon {
+    color: #d32f2f;
+}
